@@ -1,5 +1,6 @@
 package org.ieselcaminas.jpa;
 
+import jakarta.transaction.Transactional;
 import org.ieselcaminas.jpa.entity.CuentaCorriente;
 import org.ieselcaminas.jpa.repository.ClienteRepository;
 import org.ieselcaminas.jpa.repository.CuentaCorrienteRepository;
@@ -24,7 +25,7 @@ public class JpaApplication implements CommandLineRunner {
     }
 
     //En este método definimos nuestro propio código
-
+    @Transactional
     @Override
     public void run(String... args) {
         this.clienteService.crearCuentaConClientes("CuentaConMásDeUnCliente");
